@@ -19,7 +19,7 @@ npx create-react-app ./ && npm install tailwindcss postcss-cli autoprefixer --sa
     "build:styles": "postcss src/styles/tailwind.css -o src/styles.css",
     "prebuild": "npm run build:styles",
     "prestart": "npm run build:styles"
-  }
+  },
 ```
 
 #### postcss.config.js:
