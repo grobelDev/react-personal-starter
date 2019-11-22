@@ -1,35 +1,14 @@
 ## Replication
 
-#### Installation
+### Installation
 
 ```
 npx create-react-app ./ && npm install tailwindcss postcss-cli autoprefixer --save-dev && npm install eslint-plugin-react-hooks --save-dev && npm audit fix && npx tailwind init && touch postcss.config.js && mkdir -p ./src/styles && touch ./src/styles/tailwind.css && rm src/App.test.js src/App.css src/index.css src/logo.svg src/serviceWorker.js
 ```
 
-#### Additional Code to Files
+### Additional Code to Files
 
-For src/styles/tailwind.css:
-
-```
-/* src/styles/tailwind.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-For postcss.config.js:
-
-```
-// postcss.config.js
-module.exports = {
-  plugins: [
-    require("tailwindcss"),
-    require("autoprefixer")
-  ]
-};
-```
-
-For package.json:
+#### package.json:
 
 ```
   "scripts": {
@@ -43,20 +22,30 @@ For package.json:
   }
 ```
 
-#### Starting Code:
-
-Index.js
+#### postcss.config.js:
 
 ```
-import React from "react";
-import ReactDOM from "react-dom";
-import "./styles.css";
-import App from "./App";
-
-ReactDOM.render(<App />, document.getElementById("root"));
+// postcss.config.js
+module.exports = {
+  plugins: [
+    require("tailwindcss"),
+    require("autoprefixer")
+  ]
+};
 ```
 
-App.js
+#### src/styles/tailwind.css:
+
+```
+/* src/styles/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Starting Code:
+
+#### App.js
 
 ```
 import React from "react";
@@ -70,6 +59,17 @@ function App() {
 }
 
 export default App;
+```
+
+#### index.js
+
+```
+import React from "react";
+import ReactDOM from "react-dom";
+import "./styles.css";
+import App from "./App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 ---
