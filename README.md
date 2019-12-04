@@ -18,7 +18,13 @@ echo -e "import React from 'react'\n\nexport default function App() {" > ./src/A
 echo -e "  return (" >> ./src/App.js &&
 echo -e "    <div className='text-4xl font-bold text-center text-blue-500'>" >> ./src/App.js &&
 echo -e "      Hello World" >> ./src/App.js &&
-echo -e "    </div>\n  );\n}" >> ./src/App.js
+echo -e "    </div>\n  );\n}" >> ./src/App.js &&
+echo -e "import React from 'react'" > ./src/index.js &&
+echo -e "import ReactDOM from 'react-dom'" >> ./src/index.js &&
+echo -e "import './styles.css'" >> ./src/index.js &&
+echo -e "import App from './App'\n" >> ./src/index.js &&
+echo -e "ReactDOM.render(<App />, document.getElementById('root'));" >> ./src/index.js 
+
 ```
 
 ### 2. Additional Code to Files
@@ -37,10 +43,23 @@ echo -e "    </div>\n  );\n}" >> ./src/App.js
   },
 ```
 
-### 3. Starting Code:
+---
 
-#### App.js
+## Archive
 
+#### src/styles/Tailwind.css
+```
+echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css
+```
+
+```
+echo -e "module.exports = {" > ./postcss.config.js &&
+echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
+echo -e "};" >> ./postcss.config.js
+```
+
+#### src/App.js
+This boilerplate is copied with the bash commands.
 ```
 import React from "react";
 
@@ -54,14 +73,15 @@ function App() {
 
 export default App;
 ```
+```
 echo -e "import React from 'react'\n\nexport default function App() {" > ./src/App.js &&
 echo -e "  return (" >> ./src/App.js &&
 echo -e "    <div className='text-4xl font-bold text-center text-blue-500'>" >> ./src/App.js &&
 echo -e "      Hello World" >> ./src/App.js &&
 echo -e "    </div>\n  );\n}" >> ./src/App.js
+```
 
-
-#### index.js
+#### src/index.js
 
 ```
 import React from "react";
@@ -71,19 +91,13 @@ import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 ```
-
-### Archive
-
 ```
-echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css
+echo -e "import React from 'react'" > ./src/index.js &&
+echo -e "import ReactDOM from 'react-dom'" >> ./src/index.js &&
+echo -e "import './styles.css'" >> ./src/index.js &&
+echo -e "import App from './App'\n" >> ./src/index.js &&
+echo -e "ReactDOM.render(<App />, document.getElementById('root'));" >> ./src/index.js 
 ```
-
-```
-echo -e "module.exports = {" > ./postcss.config.js &&
-echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
-echo -e "};" >> ./postcss.config.js
-```
-
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
