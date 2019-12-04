@@ -3,7 +3,17 @@
 ### 1. Installation
 
 ```
-npx create-react-app ./ && npm install tailwindcss postcss-cli autoprefixer --save-dev && npm install eslint-plugin-react-hooks --save-dev && npm audit fix && npx tailwind init && touch postcss.config.js && mkdir -p ./src/styles && touch ./src/styles/tailwind.css && rm src/App.test.js src/App.css src/index.css src/logo.svg src/serviceWorker.js
+npx create-react-app ./ && 
+npm install tailwindcss postcss-cli autoprefixer --save-dev && 
+npm install eslint-plugin-react-hooks --save-dev && 
+npm audit fix && npx tailwind init && touch postcss.config.js && 
+mkdir -p ./src/styles && 
+touch ./src/styles/tailwind.css && 
+rm src/App.test.js src/App.css src/index.css src/logo.svg src/serviceWorker.js &&
+echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css &&
+echo -e "module.exports = {" > ./postcss.config.js &&
+echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
+echo -e "};" >> ./postcss.config.js
 ```
 
 ```
