@@ -16,16 +16,6 @@ echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./pos
 echo -e "};" >> ./postcss.config.js
 ```
 
-```
-echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css
-```
-
-```
-echo -e "module.exports = {" > ./postcss.config.js &&
-echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
-echo -e "};" >> ./postcss.config.js
-```
-
 ### 2. Additional Code to Files
 
 #### package.json:
@@ -40,18 +30,6 @@ echo -e "};" >> ./postcss.config.js
     "prebuild": "npm run build:styles",
     "prestart": "npm run build:styles"
   },
-```
-
-#### postcss.config.js:
-
-```
-// postcss.config.js
-module.exports = {
-  plugins: [
-    require("tailwindcss"),
-    require("autoprefixer")
-  ]
-};
 ```
 
 ### 3. Starting Code:
@@ -81,6 +59,18 @@ import "./styles.css";
 import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
+```
+
+### Archive
+
+```
+echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css
+```
+
+```
+echo -e "module.exports = {" > ./postcss.config.js &&
+echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
+echo -e "};" >> ./postcss.config.js
 ```
 
 ---
