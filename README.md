@@ -10,6 +10,12 @@ npx create-react-app ./ && npm install tailwindcss postcss-cli autoprefixer --sa
 echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css
 ```
 
+```
+echo -e "module.exports = {" > ./postcss.config.js &&
+echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
+echo -e "};" >> ./postcss.config.js
+```
+
 ### 2. Additional Code to Files
 
 #### package.json:
