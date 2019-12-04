@@ -1,6 +1,11 @@
 ## Replication
 
-### 1. Installation
+### 1. Setup directory for project
+```
+mkdir react-boilerplate && cd $_
+```
+
+### 2. Installation
 
 ```
 npx create-react-app ./ && 
@@ -26,7 +31,7 @@ echo -e "import App from './App'\n" >> ./src/index.js &&
 echo -e "ReactDOM.render(<App />, document.getElementById('root'));" >> ./src/index.js 
 ```
 
-### 2. Additional Code to Files
+### 3. Additional Code to Files
 
 #### package.json:
 
