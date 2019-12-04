@@ -24,7 +24,6 @@ echo -e "import ReactDOM from 'react-dom'" >> ./src/index.js &&
 echo -e "import './styles.css'" >> ./src/index.js &&
 echo -e "import App from './App'\n" >> ./src/index.js &&
 echo -e "ReactDOM.render(<App />, document.getElementById('root'));" >> ./src/index.js 
-
 ```
 
 ### 2. Additional Code to Files
