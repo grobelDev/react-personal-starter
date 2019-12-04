@@ -13,7 +13,12 @@ rm src/App.test.js src/App.css src/index.css src/logo.svg src/serviceWorker.js &
 echo -e "@tailwind base;\n@tailwind components;\n@tailwind utilities;" > ./src/styles/tailwind.css &&
 echo -e "module.exports = {" > ./postcss.config.js &&
 echo -e  "  plugins: [require('tailwindcss'), require('autoprefixer')]" >> ./postcss.config.js &&
-echo -e "};" >> ./postcss.config.js
+echo -e "};" >> ./postcss.config.js &&
+echo -e "import React from 'react'\n\nexport default function App() {" > ./src/App.js &&
+echo -e "  return (" >> ./src/App.js &&
+echo -e "    <div className='text-4xl font-bold text-center text-blue-500'>" >> ./src/App.js &&
+echo -e "      Hello World" >> ./src/App.js &&
+echo -e "    </div>\n  );\n}" >> ./src/App.js
 ```
 
 ### 2. Additional Code to Files
@@ -49,6 +54,12 @@ function App() {
 
 export default App;
 ```
+echo -e "import React from 'react'\n\nexport default function App() {" > ./src/App.js &&
+echo -e "  return (" >> ./src/App.js &&
+echo -e "    <div className='text-4xl font-bold text-center text-blue-500'>" >> ./src/App.js &&
+echo -e "      Hello World" >> ./src/App.js &&
+echo -e "    </div>\n  );\n}" >> ./src/App.js
+
 
 #### index.js
 
